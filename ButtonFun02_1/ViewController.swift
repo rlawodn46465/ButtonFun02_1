@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     
     var count = 0
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -22,15 +23,20 @@ class ViewController: UIViewController {
         counterLabel.text = String(count)
     }
     @IBAction func buttonPressed(_ sender: Any) {
+        if(count == 9){
+            count = -1
+        }
         myLabel.text = "버튼 A가 눌러졌습니다"
         count = count + 1
-        counterLabel.text = "A 누르셨습니다. 총 : " + String(count)
-        
+        counterLabel.text = String(count)
     }
     @IBAction func buttonBpressed(_ sender: Any) {
+        if(count == 9){
+            count = -1
+        }
         labelB.text = "버튼 B가 눌러졌습니다. "
         count = count + 1
-        counterLabel.text = "B 누르셨습니다. 총 : " + String(count)
+        counterLabel.text = String(count)
     }
     
 
