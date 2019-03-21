@@ -22,21 +22,39 @@ class ViewController: UIViewController {
         //
         counterLabel.text = String(count)
     }
+    var point = 0
     @IBAction func buttonPressed(_ sender: Any) {
-        if(count == 9){
-            count = -1
-        }
+        
         myLabel.text = "버튼 A가 눌러졌습니다"
-        count = count + 1
         counterLabel.text = String(count)
+        if(point == 0){
+            count = count + 1
+            if(count >= 9 ){
+                point = 1
+            }
+        }else if(point == 1){
+            count = count - 1
+            if(count == 1){
+                point = 0
+            }
+        }
+        
     }
     @IBAction func buttonBpressed(_ sender: Any) {
-        if(count == 9){
-            count = -1
-        }
+        
         labelB.text = "버튼 B가 눌러졌습니다. "
-        count = count + 1
         counterLabel.text = String(count)
+        if(point == 0){
+            count = count + 1
+            if(count >= 9 ){
+                point = 1
+            }
+        }else if(point == 1){
+            count = count - 1
+            if(count == 1){
+                point = 0
+            }
+        }
     }
     
 
